@@ -26,3 +26,4 @@ test_set, test_set_labels = dm.transform_input_data(test_set, training_set_origi
 
 mnb = MultinomialNB().fit(training_set, training_set_labels)
 print("score on test: " + str(mnb.score(test_set, test_set_labels)))
+print("score on test: " + str(mnb.score(training_set, training_set_labels)))

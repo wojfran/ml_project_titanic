@@ -33,7 +33,10 @@ def transform_input_data(set, training_set):
     training_set_1hot = training_set[["Pclass", "SibSp", "Parch", "Embarked"]]
     set_1hot = set[["Pclass", "SibSp", "Parch", "Embarked"]]
 
-    cat_encoder = OneHotEncoder()
+    print(set_1hot.head())
+    print(training_set_1hot.head())
+
+    cat_encoder = OneHotEncoder(handle_unknown='ignore')
     cat_encoder.fit_transform(training_set_1hot)
     set_1hot = cat_encoder.transform(set_1hot)
     set_1hot = set_1hot.toarray()
