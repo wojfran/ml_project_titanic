@@ -65,7 +65,6 @@ def group_fare(fare: float) -> str:
         return "High"
 
 def transform_input_data(data_set: pd.DataFrame) -> Tuple[pd.DataFrame, pd.DataFrame]:
-    print(data_set.info())
     data_set = data_set.drop(["PassengerId", "Cabin", "Ticket"], axis=1)
     data_set = data_set.dropna(subset=["Embarked"])
     data_set = data_set.reset_index(drop=True)
