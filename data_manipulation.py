@@ -25,7 +25,7 @@ def extract_titles(names):
 # 'Dr': 7, 'Mme': 1, 'Ms': 1, 'Major': 2, 'Lady': 1, 'Sir': 1, 'Mlle': 2, 
 #'Col': 2, 'Capt': 1, 'the Countess': 1, 'Jonkheer': 1}
 # The cathegories are: Common, Proffession and Child
-def group_title(name):
+def group_title(name: str) -> str:
     common = ["Mr", "Mrs", "Miss", "Ms", "Mme", "Mlle"]
     profession = ["Don", "Rev", "Dr",  "Major", "Lady", "Sir", "Col", "Capt", "the Countess", "Jonkheer"]
     child = ["Master"]
@@ -42,7 +42,7 @@ def group_title(name):
 # Function which groups groups the passenger by age into cathegories
 # The cathegories are: Child, Young, Adult and Elder, if age is null
 # the passenger is grouped as an Adult
-def group_age(age):
+def group_age(age: int) -> str:
     if age < 18:
         return "Child"
     elif age < 40:
